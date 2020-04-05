@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: kub-sqs-autoscaler
-        image: $(DOCKER_IMAGE_REPOSITORY)  # required
+        image: vfabi/k8s-autoscaler-sqs
         command:
           - ./k8s-app
           - --sqs-queue-url=https://sqs.$(AWS_REGION).amazonaws.com/$(AWS_ID)/$(SQS_QUEUE)  # required
