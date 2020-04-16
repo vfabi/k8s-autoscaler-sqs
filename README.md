@@ -1,5 +1,5 @@
-# k8s-autoscaler-sqs
-K8S deployment autoscaler controller based on AWS SQS queue size  
+# k8s-controller-sqs-autoscaler
+K8S deployment autoscale controller based on AWS SQS queue size  
 
 ## Status
 Beta  
@@ -10,18 +10,18 @@ Create a Kubernetes deployment yaml like this:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: kub-sqs-autoscaler
+  name: controller-sqs-autoscaler
 spec:
   revisionHistoryLimit: 1
   replicas: 1
   template:
     metadata:
       labels:
-        app: kub-sqs-autoscaler
+        app: controller-sqs-autoscaler
     spec:
       containers:
-      - name: kub-sqs-autoscaler
-        image: vfabi/k8s-autoscaler-sqs
+      - name: controller-sqs-autoscaler
+        image: vfabi/k8s-controller-sqs-autoscaler
         command:
           - ./k8s-app
           - --sqs-queue-url=https://sqs.$(AWS_REGION).amazonaws.com/$(AWS_ID)/$(SQS_QUEUE)  # required
