@@ -1,5 +1,5 @@
 # k8s-autoscaler-sqs
-K8S deployment autoscaler based on AWS SQS queue size  
+K8S deployment autoscaler controller based on AWS SQS queue size  
 
 ## Status
 Beta  
