@@ -1,4 +1,18 @@
 #!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+"""
+    @project: k8s-controller-sqs-autoscaler
+    @component: core
+    @copyright: © 2020 by vfabi
+    @author: vfabi
+    @support: vfabi
+    @initial date:
+    @license: this file is subject to the terms and conditions defined
+        in file 'LICENSE', which is part of this source code package
+    @description:
+    @todo:
+"""
 
 import boto3
 from time import sleep, time
@@ -86,7 +100,3 @@ class SQSPoller:
         logger.debug("Starting poll for {} queue every {}s".format(options.sqs_queue_url, options.poll_period))
         while True:
             self.poll()
-
-
-def run(options):
-    SQSPoller(options).run()
