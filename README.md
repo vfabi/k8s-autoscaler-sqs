@@ -1,4 +1,13 @@
-# k8s-controller-sqs-autoscaler
+# k8scontroller-sqs-autoscaler
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/vfabi/k8scontroller-sqs-autoscaler)
+![GitHub last commit](https://img.shields.io/github/last-commit/vfabi/k8scontroller-sqs-autoscaler)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+[![Generic badge](https://img.shields.io/badge/hub.docker.com-vfabi/k8scontroller_sqs_autoscaler-<>.svg)](https://hub.docker.com/repository/docker/vfabi/k8scontroller-sqs-autoscaler)
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/vfabi/k8scontroller-sqs-autoscaler)
+![Docker Pulls](https://img.shields.io/docker/pulls/vfabi/k8scontroller-sqs-autoscaler)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/vfabi/k8scontroller-sqs-autoscaler)
+
 Kubernetes deployment autoscale controller based on AWS SQS queue size.  
 
 ## Features
@@ -35,18 +44,18 @@ Apply a Kubernetes deployment configuration:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: controller-sqs-autoscaler
+  name: k8scontroller-sqs-autoscaler
 spec:
   revisionHistoryLimit: 1
   replicas: 1
   template:
     metadata:
       labels:
-        app: controller-sqs-autoscaler
+        app: k8scontroller-sqs-autoscaler
     spec:
       containers:
       - name: controller-sqs-autoscaler
-        image: vfabi/k8s-controller-sqs-autoscaler
+        image: vfabi/k8scontroller-sqs-autoscaler
         command:
           - ./k8s-app
           - --sqs-queue-url=https://sqs.$(AWS_REGION).amazonaws.com/$(AWS_ID)/$(SQS_QUEUE)  # required
@@ -78,7 +87,7 @@ spec:
 
 
 # Docker
-[![Generic badge](https://img.shields.io/badge/hub.docker.com-vfabi/k8s_controller_sqs_autoscaler-<>.svg)](https://hub.docker.com/repository/docker/vfabi/k8s-controller-sqs-autoscaler)  
+[![Generic badge](https://img.shields.io/badge/hub.docker.com-vfabi/k8scontroller_sqs_autoscaler-<>.svg)](https://hub.docker.com/repository/docker/vfabi/k8scontroller-sqs-autoscaler)  
 
 
 # Contributing

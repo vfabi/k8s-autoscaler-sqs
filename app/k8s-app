@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 """
-    @project: k8s-controller-sqs-autoscaler
+    @project: k8scontroller-sqs-autoscaler
     @component: core
     @copyright: © 2020 by vfabi
     @author: vfabi
